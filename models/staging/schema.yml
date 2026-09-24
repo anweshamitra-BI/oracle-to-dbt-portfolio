@@ -2,12 +2,15 @@ version: 2
 
 models:
   - name: stg_orders
+    description: "Staging model for customer orders, sourced from the raw TPCH orders table. One row per order."
     columns:
       - name: order_id
+        description: "Unique identifier for each order."
         tests:
           - unique
           - not_null
       - name: customer_id
+        description: "Foreign key linking the order to the customer who placed it."
         tests:
           - not_null
           - relationships:
